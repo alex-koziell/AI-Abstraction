@@ -1,7 +1,7 @@
 # Deep Learning "from scratch" in Python
 Closely following https://course.fast.ai/part2, the aim is to develop a machine learning library using jupyter notebooks.
 
-The notebooks are being numbered to reflect stages in which the library is built. I plan to do any refactor by making a new notebooks to have a nice record of the development process.
+The notebooks are being numbered to reflect stages in which the library is built. I plan to refactor by making a new notebooks to have a nice record of the development process.
 
 ### Log:
 *__28/06/2020__ - Wrote a script to export code from jupyter notebooks into a python module in a systematic way.*
