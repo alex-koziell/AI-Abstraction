@@ -8,4 +8,4 @@ The notebooks are being numbered to reflect stages in which the library is built
 
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
-| *00_exports*  |  • Export code from jupyter noteboooks to python module  |  ✓ |
+| *00_exports*  |  • Turn code from jupyter noteboooks to python modules  |  ✓ |
