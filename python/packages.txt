@@ -1,0 +1,8 @@
+# Math and ML Packages
+numpy
+pytorch
+
+# Development and Visualisation
+matplotlib
+jupyter
+fire
