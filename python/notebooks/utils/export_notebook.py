@@ -54,7 +54,8 @@ def cells_to_script(file_path):
     
     code_cells = [cell for cell in notebook_dict['cells']
                   if is_export_cell(cell)]
-    module_code = f'# module automatically generated from {file_path.name}\n\n'
+    module_code = f'# module automatically generated from {file_path.name}\
+\n# to change this code, please edit the appropriate notebook and re-export, rather than editing this script directly\n\n'
 
     for cell in code_cells:
         module_code += ''.join(cell["source"][1:]) + '\n\n'

@@ -1,4 +1,5 @@
 # module automatically generated from 01_testing.ipynb
+# to change this code, please edit the appropriate notebook and re-export, rather than editing this script directly
 
 import operator
 from functools import partial
