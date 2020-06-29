@@ -12,5 +12,5 @@ The notebooks are being numbered to reflect stages in which the library is built
 |-------------|:----------:|:---------:|
 | *00_exports*  |  • Turn code from jupyter noteboooks to python modules  |  ✓ |
 | *01_testing* | • Tests based on some comparable (supplied as a function argument). | ✓ |
-| Low Priority |
+| *Low Priority* |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
