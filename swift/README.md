@@ -4,9 +4,9 @@
 
 __29/06/2020__:
 
-- *Wrote a script to export code from jupyter notebooks into a python modules in a systematic way.*
+- *Wrote functions to create TensorFlow tensors from MNIST byte data. *
 
-- *Created some small testing functions and familiarized self with fastai.datasets module.*
+- *Wrote function timer.*
 
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
