@@ -1,4 +1,5 @@
 # Deep Learning "from scratch" in Swift
+The aim is to build a deep learning library built on Swift for Tensorflow.
 
 ## Log
 
