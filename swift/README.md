@@ -4,7 +4,7 @@
 
 __29/06/2020__:
 
-- *Wrote functions to create TensorFlow tensors from MNIST byte data. *
+- *Wrote functions to create TensorFlow tensors from MNIST byte data.*
 
 - *Wrote function timer.*
 
