@@ -1,6 +1,7 @@
 # module automatically generated from 02_MNISTLoader.ipynb
 # to change this code, please edit the appropriate notebook and re-export, rather than editing this script directly
 
+from functools import partial
 import gzip
 import pickle
 
