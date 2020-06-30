@@ -9,7 +9,7 @@ The notebooks are being numbered to reflect stages in which the library is built
 
 *__29/06/2020__ - Created some small testing functions and familiarized self with fastai.datasets module.*
 
-*__30/06/2020__ - Implemented forward and backward pass for a DNN using inspiration from Pytorch's `nn.Module`. *
+*__30/06/2020__ - Implemented forward and backward pass for a DNN using inspiration from Pytorch's `nn.Module`.*
 
 
 |  Notebooks  |  Features  |  Working  |
