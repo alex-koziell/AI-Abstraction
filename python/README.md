@@ -12,10 +12,21 @@ The notebooks are being numbered to reflect stages in which the library is built
 *__30/06/2020__ - Implemented forward and backward pass for a DNN using inspiration from Pytorch's `nn.Module`.*
 
 
+*__30/06/2020__*
+- *Data API for drawing either sequentially or randomly sampled batches from data (re-create Pytorch's `DataLoader`).*
+- *New activations and loss functions (softmax, neg log likelihood, cross entropy).*
+- *SGD optimizer*.
+- *Model definition.*
+- *Training/Eval loop.*
+- *Neat and concise data loading, model definition and training/eval (just 4 lines of code!).*
+
+
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
 | *00_exports*  |  • Turn code from jupyter noteboooks to python modules  |  ✓ |
 | *01_testing* | • Tests based on some comparable (supplied as a function argument). | ✓ |
 | *02_MNISTLoader* | • Loads MNIST with training and validation split. | ✓ |
 | *03_DNN* | • Dense neural network capable of forward and backward pass. | ✓ |
+| *04_DataAPI* | • Sequential and Random Batch sampling of data. | ✓ |
+| *05_(...)* | • Cross-entropy loss, SGD optimizer and model training/eval. | ✓ |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
