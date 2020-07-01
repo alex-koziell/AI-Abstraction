@@ -12,7 +12,7 @@ The notebooks are being numbered to reflect stages in which the library is built
 *__30/06/2020__ - Implemented forward and backward pass for a DNN using inspiration from Pytorch's `nn.Module`.*
 
 
-*__30/06/2020__*
+*__01/07/2020__*
 - *Data API for drawing either sequentially or randomly sampled batches from data (re-create Pytorch's `DataLoader`).*
 - *New activations and loss functions (softmax, neg log likelihood, cross entropy).*
 - *SGD optimizer*.
