@@ -4,5 +4,5 @@
 from torch.utils.data import DataLoader
 
 def make_dls(train_ds, valid_ds, batch_size, **kwargs):
-    return (DataLoader(train_ds, bs, shuffle=True, **kwargs),
-            DataLoader(valid_ds, bs*2, **kwargs))
+    return (DataLoader(train_ds, batch_size, shuffle=True, **kwargs),
+            DataLoader(valid_ds, batch_size*2, **kwargs))
