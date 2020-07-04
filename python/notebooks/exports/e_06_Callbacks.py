@@ -33,14 +33,30 @@ STAGES = ['begin_fit',
           'after_step',
           'begin_valid',
           'after_epoch',
-          'after_fit']
+          'after_fit',
+          'after_cancel_batch',
+          'after_cancel_epoch',
+          'after_cancel_fit']
+
 
 class Callback():
     _order = 0
     def __getattr__(self, attr): return getattr(self.job, attr)
+    
     @property
     def name(self):
         return self.__class__.__name__
+    
+    def __call__(self, stage):
+        f = getattr(self, stage, None)
+        if f and f(): return False
+        return True
+    
+# allows callbacks to cancel fit at any stage by raising an exception
+class CancelFitException(Exception): pass
+class CancelEpochException(Exception): pass
+class CancelBatchException(Exception): pass
+
 
 class DLJob():
     def __init__(self, callbacks=[]):
@@ -57,25 +73,29 @@ class DLJob():
     
     
     def one_batch(self, xb, yb):
-        self.xb, self.yb = xb, yb
-        if not self('begin_batch'): return
-        self.pred = self.model(self.xb)
-        if not self('after_pred'): return
-        self.loss = self.loss_f(self.pred, self.yb)
-        if not self('after_loss') or not self.training: return
-        self.loss.backward()
-        if not self('after_backward'): return
-        self.opt.step()
-        if not self('after_step'): return
-        self.opt.zero_grad()
+        try:
+            self.xb, self.yb = xb, yb
+            if not self('begin_batch'): return
+            self.pred = self.model(self.xb)
+            if not self('after_pred'): return
+            self.loss = self.loss_f(self.pred, self.yb)
+            if not self('after_loss') or not self.training: return
+            self.loss.backward()
+            if not self('after_backward'): return
+            self.opt.step()
+            if not self('after_step'): return
+            self.opt.zero_grad()
+        except CancelBatchException: self('after_cancel_batch')
     
     def all_batch(self, dl):
-        self.iters = len(dl)
-        for xb, yb in dl:
-            if self.stop: break
-            self.one_batch(xb, yb)
-            self('after_batch')
-        self.stop = False
+        try:
+            self.iters = len(dl)
+            for xb, yb in dl:
+                if self.stop: break
+                self.one_batch(xb, yb)
+                self('after_batch')
+            self.stop = False
+        except CancelEpochException: self('after_cancel_epoch')
         
     def fit(self, epochs, model_wrapper):
         self.epochs, self.mw = epochs, model_wrapper
@@ -96,17 +116,17 @@ class DLJob():
                         self.model.eval()
                         self.all_batch(self.data_w.valid_dl)
                 if not self('after_epoch'): break
-                    
+        
+        except CancelFitException: self('after_cancel_fit')
         finally:
             self('after_fit')
             self.mw = None
             
             
     def __call__(self, stage):
-        for cb in sorted(self.cbs, key=lambda x: x._order):
-            f = getattr(cb, stage, None)
-            if f and f(): return False
-        return True
+        cont = True
+        for cb in sorted(self.cbs, key=lambda x: x._order): cont = cb(stage) or cont
+        return cont
 
 class AvgStats():
     def __init__(self, metrics, training):
