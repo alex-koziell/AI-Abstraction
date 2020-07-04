@@ -24,6 +24,9 @@ The notebooks are being numbered to reflect stages in which the library is built
 - *Callback API (a lot of work!)*
 - *Running average stats and early stopping callbacks*
 
+*__04/07/2020__*
+- *Refactor callbacks and added cancel batch/epoch/fit control flow, using exception handling.*
+
 
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
@@ -33,5 +36,5 @@ The notebooks are being numbered to reflect stages in which the library is built
 | *03_DNN* | • Dense neural network capable of forward and backward pass. | ✓ |
 | *04_DataAPI* | • Sequential and Random Batch sampling of data. | ✓ |
 | *05_(...)* | • Cross-entropy loss, SGD optimizer and model training/eval. | ✓ |
-| *06_Callbacks* | • Callback API, avg stats, early stopping. | ✓ |
+| *06_Callbacks* | • Callback API, avg stats, early stopping.   | ✓ |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
