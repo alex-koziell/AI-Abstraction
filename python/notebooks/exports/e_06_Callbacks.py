@@ -1,6 +1,14 @@
 # module automatically generated from 06_Callbacks.ipynb
 # to change this code, please edit the appropriate notebook and re-export, rather than editing this script directly
 
+from exports.e_02_MNISTLoader import loadMNIST
+from exports.e_04_DataAPI import Dataset
+from exports.e_05_Losses_Optimizers_TrainEval import make_dls
+
+import torch
+from torch import nn, optim
+from torch.functional import F
+
 class DataWrapper():
     def __init__(self, train_dl, valid_dl, n_out):
         self.train_dl, self.valid_dl, self.n_out = train_dl, valid_dl, n_out
@@ -90,9 +98,12 @@ class DLJob():
     def all_batch(self, dl):
         try:
             self.iters = len(dl)
+            self.iter = 0
             for xb, yb in dl:
                 if self.stop: break
                 self.one_batch(xb, yb)
+                self.iter += 1
+                self.epoch += 1/self.iters
                 self('after_batch')
             self.stop = False
         except CancelEpochException: self('after_cancel_epoch')
@@ -124,7 +135,7 @@ class DLJob():
             
             
     def __call__(self, stage):
-        cont = True
+        cont = False
         for cb in sorted(self.cbs, key=lambda x: x._order): cont = cb(stage) or cont
         return cont
 
