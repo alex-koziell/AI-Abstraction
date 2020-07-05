@@ -69,6 +69,7 @@ class CancelBatchException(Exception): pass
 class DLJob():
     def __init__(self, callbacks=[]):
         self.cbs, self.stop = callbacks, False
+        for cb in self.cbs: setattr(self, cb.name, cb)
     
     @property
     def opt(self): return self.mw.opt
