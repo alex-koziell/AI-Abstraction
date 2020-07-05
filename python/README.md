@@ -26,6 +26,7 @@ The notebooks are being numbered to reflect stages in which the library is built
 
 *__04/07/2020__*
 - *Refactor callbacks and added cancel batch/epoch/fit control flow, using exception handling.*
+- *Recorder callback, schedulers and annealing using callbacks.*
 
 
 |  Notebooks  |  Features  |  Working  |
@@ -37,4 +38,5 @@ The notebooks are being numbered to reflect stages in which the library is built
 | *04_DataAPI* | • Sequential and Random Batch sampling of data. | ✓ |
 | *05_(...)* | • Cross-entropy loss, SGD optimizer and model training/eval. | ✓ |
 | *06_Callbacks* | • Callback API, avg stats, early stopping.   | ✓ |
+| *07_Annealing* | • Record losses and parameters during training, schedulers and annealing using callbacks.   | ✓ |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
