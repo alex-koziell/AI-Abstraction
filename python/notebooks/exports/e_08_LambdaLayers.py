@@ -62,3 +62,5 @@ class BatchTransformCB(Callback):
 def view_tfm(size): 
     def _inner(x) : return x.view(*((-1,)+size))
     return _inner
+
+mnist_view = view_tfm((1, 28, 28))
