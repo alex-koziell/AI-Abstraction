@@ -30,6 +30,10 @@ The notebooks are being numbered to reflect stages in which the library is built
 
 *__05/07/2020__ - Lambda layers and CNN model wrapper.*
 
+*__06/07/2020__* 
+- *Cuda Callback, batch transformation callback.*
+- *Awesome manual hook implementation/recording activations of each CNN ReLU.*
+
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
 | *00_exports*  |  • Turn code from jupyter noteboooks to python modules  |  ✓ |
@@ -40,5 +44,6 @@ The notebooks are being numbered to reflect stages in which the library is built
 | *05_(...)* | • Cross-entropy loss, SGD optimizer and model training/eval. | ✓ |
 | *06_Callbacks* | • Callback API, avg stats, early stopping.   | ✓ |
 | *07_Annealing* | • Record losses and parameters during training, schedulers and annealing using callbacks.   | ✓ |
-| *08_LambdaLayers* | • Lambda layers, CNN model wrapper.   | ✓ |
+| *08_LambdaLayers* | • Lambda layers, CNN model wrapper, Cuda and Batch Xform callbacks.   | ✓ |
+| *09_Hooks* | • Manual hooks, layer wise activation plotting.   | ✓ |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
