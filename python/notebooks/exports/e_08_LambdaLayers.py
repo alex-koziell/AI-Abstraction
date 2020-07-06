@@ -48,3 +48,17 @@ def CNNModel(data_w, lr=0.3):
     )
     
     return model, optim.SGD(model.parameters(), lr=lr)
+
+class CudaCB(Callback):
+    def __init__(self, device): self.device = device
+    def begin_fit(self): self.model.to(self.device)
+    def begin_batch(self): self.job.xb, self.job.yb = self.xb.to(self.device), self.yb.to(self.device)
+
+class BatchTransformCB(Callback):
+    def __init__(self, tfm): self.tfm = tfm
+        
+    def begin_batch(self): self.job.xb = self.tfm(self.xb)
+
+def view_tfm(size): 
+    def _inner(x) : return x.view(*((-1,)+size))
+    return _inner
