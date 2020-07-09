@@ -1,6 +1,6 @@
 # Deep Learning "from scratch" in Python
 
-Closely following https://course.fast.ai/part2, the aim is to develop a deep learning library built on Pytorch using jupyter notebooks, gathering some insights into deep learning along the way, including paper implementaions, performance considerations, and explainability.
+Closely following https://course.fast.ai/part2, the aim is to develop a deep learning library built on Pytorch using jupyter notebooks, gathering some insights into deep learning along the way, including paper implementaions, performance analysis, and explainability.
 
 The notebooks are being numbered to reflect stages in which the library is built. I plan to refactor code by making a new notebooks, to retain a nice record of the development process.
 
