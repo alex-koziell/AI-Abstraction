@@ -38,8 +38,7 @@ The notebooks are being numbered to reflect stages in which the library is built
 - *Hooks class.*
 - *Kaiming initialization to fix our crazy activations from notebook 09.*
 
-*__08/07/2020__* 
-- *More stats visualisations with histograms.*
+*__09/07/2020__* - *More stats visualisations with histograms.*
 
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
