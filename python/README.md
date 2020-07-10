@@ -40,6 +40,8 @@ The notebooks are being numbered to reflect stages in which the library is built
 
 *__09/07/2020__* - *More stats visualisations with histograms.*
 
+*__10/07/2020__* - *General ReLU class.*
+
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
 | *00_exports*  |  • Turn code from jupyter noteboooks to python modules  |  ✓ |
@@ -54,4 +56,5 @@ The notebooks are being numbered to reflect stages in which the library is built
 | *09_Hooks* | • Manual hooks, layer wise activation plotting.   | ✓ |
 | *10_Xavier_Kaiming_Inits* | • Xavier, Kaiming initialization techniques and explanation.   | ✓ |
 | *11_MoreStats* | • Layer activation histograms.   | ✓ |
+| *12_GeneralReLU* | • General ReLU class | ✓ |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
