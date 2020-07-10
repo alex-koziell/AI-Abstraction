@@ -1,6 +1,8 @@
 # module automatically generated from 11_MoreStats.ipynb
 # to change this code, please edit the appropriate notebook and re-export, rather than editing this script directly
 
+from exports.e_09_Hooks import *
+
 def append_stats_hist(hook, model, inp, out):
     if not hasattr(hook, 'stats'): hook.stats = ([],[],[])
     means, stds, hists = hook.stats
