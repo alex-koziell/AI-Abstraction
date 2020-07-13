@@ -14,20 +14,9 @@ class GReLU(nn.Module):
         if self.maxv is not None: x.clamp_max_(self.maxv)
         return x
 
-    
-def conv_GReLU(n_inp, n_out, kernel_size=3, stride=2, **kwargs):
-    return nn.Sequential(
-            nn.Conv2d(n_inp, n_out,
-                      kernel_size,
-                      padding=kernel_size//2,
-                      stride=stride),
-            GReLU(**kwargs))
-
-    
-def cnn_layers_GReLU(data_w, n_kernels, **kwargs):
-    n_kernels = [1] + n_kernels
-    
-    return [
-        conv_GReLU(n_kernels[i], n_kernels[i+1], 5 if i==0 else 3, **kwargs)
-        for i in range(len(n_kernels)-1)
-    ] + [nn.AdaptiveAvgPool2d(1), Lambda(flatten), nn.Linear(n_kernels[-1], data_w.n_out)]
+def append_stats_hist_GReLU(hook, model, inp, out):
+    if not hasattr(hook, 'stats'): hook.stats = ([],[],[])
+    means, stds, hists = hook.stats
+    means.append(out.data.mean().cpu())
+    stds .append(out.data.std().cpu())
+    hists.append(out.data.cpu().histc(bins=40, min=-3, max=7)) # a histogram telling us how many activations in each bin
