@@ -42,6 +42,8 @@ The notebooks are being numbered to reflect stages in which the library is built
 
 *__10/07/2020__* - *General ReLU class.*
 
+*__13/07/2020__* - *Batch normalization implementation.*
+
 |  Notebooks  |  Features  |  Working  |
 |-------------|:----------:|:---------:|
 | *00_exports*  |  • Turn code from jupyter noteboooks to python modules  |  ✓ |
@@ -56,5 +58,6 @@ The notebooks are being numbered to reflect stages in which the library is built
 | *09_Hooks* | • Manual hooks, layer wise activation plotting.   | ✓ |
 | *10_Xavier_Kaiming_Inits* | • Xavier, Kaiming initialization techniques and explanation.   | ✓ |
 | *11_MoreStats* | • Layer activation histograms.   | ✓ |
-| *12_GeneralReLU* | • General ReLU class | ✓ |
+| *12_GeneralReLU* | • General ReLU class. | ✓ |
+| *13_Batchnorm* | • Batch normalization. | ✓ |
 | *- 01_datasets* | • All the required functionality from fastai.datasets | ✗ |
